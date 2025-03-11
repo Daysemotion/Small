@@ -1,4 +1,4 @@
-package com.test.small
+package com.test.small.repository
 
 data class userInfoItem(
     val email: String,

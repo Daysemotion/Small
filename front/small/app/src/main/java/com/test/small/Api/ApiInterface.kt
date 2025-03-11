@@ -1,22 +1,23 @@
 package com.test.small.Api
 
-import com.test.small.userInfoItem
+import com.test.small.repository.userInfoItem
 import retrofit2.http.GET
 import retrofit2.http.Query
-import retrofit2.Call
+import retrofit2.Response
 import retrofit2.http.FieldMap
 import retrofit2.http.FormUrlEncoded
 import retrofit2.http.POST
 
 interface ApiInterface {
-    @GET("users/")
-    fun getUserData(
-        @Query("page")page : Int
-    ): Call<List<userInfoItem>>
+    @GET("comments/")
+    suspend fun getUserData(
+        @Query("_page")page : Int,
+        @Query("_limit")limit : Int
+    ): Response<List<userInfoItem>>
 
     @FormUrlEncoded
     @POST("posts/")
-    fun getPostList(
+    suspend fun postUserList(
         @FieldMap param: HashMap<String, Any>
-    ): Call<userInfoItem>
+    ): Response<userInfoItem>
 }

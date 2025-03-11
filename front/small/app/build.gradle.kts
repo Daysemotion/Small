@@ -65,4 +65,7 @@ dependencies {
 
     //리사이클러뷰
     implementation("androidx.recyclerview:recyclerview:1.3.1")
+
+    //뷰 모델 코루틴
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
 }
